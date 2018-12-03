@@ -19,5 +19,9 @@ module.exports = ( tweet ) => {
         }
     }
 
-    return img;
+    function clean( str ) {
+        return str?str.replace(/[;{}\'\"()]/g,''):null;
+    }
+
+    return clean(img);
 }

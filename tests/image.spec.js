@@ -28,6 +28,7 @@ describe("Get images", function () {
       let tweet = xpath.select('./div[contains(@class, \'tweet\')]/div[contains(@class, \'content\')]', tw)[0]
       return getImage(tweet); 
     })
+
     let groups = groupBy( images, (item)=> `${item}` );
 
     expect(groups.null.length).to.equal(2);
