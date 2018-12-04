@@ -38,6 +38,8 @@ module.exports = function (username, cb) {
         if (body) body = nodeToText(body)
         var img = getImage(tweet)
 
+        body = (body||'');
+
         let mentions = (body.match(/\s([@][\w_-]+)/gi)||[]).map( str => str.trim() )
         let hashtags = (body.match(/\s([#][\w_-]+)/gi)||[]).map( str => str.trim() )
         let links = getLinks( body );
